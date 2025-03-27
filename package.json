@@ -1,0 +1,24 @@
+{
+  "name": "bookstore-landing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gvitola/bookstore-landing.git"
+  },
+  "keywords": [],
+  "author": "Guillermo A. Vitola L.",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gvitola/bookstore-landing/issues"
+  },
+  "homepage": "https://github.com/gvitola/bookstore-landing#readme",
+  "dependencies": {
+    "bookstore-landing": "file:"
+  }
+}
