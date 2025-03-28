@@ -618,6 +618,7 @@ a:focus {
 .info_section ul li {
   list-style-type: none;
   margin: 10px 0;
+  color: #ffffffa4;
 }
 
 .info_section ul li a,
