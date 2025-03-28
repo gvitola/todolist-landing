@@ -1,5 +1,5 @@
 {
-  "name": "bookstore-landing",
+  "name": "todolist-landing",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gvitola/bookstore-landing.git"
+    "url": "git+https://github.com/gvitola/todolist-landing.git"
   },
   "keywords": [],
   "author": "Guillermo A. Vitola L.",
   "license": "MIT",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/gvitola/bookstore-landing/issues"
+    "url": "https://github.com/gvitola/todolist-landing/issues"
   },
-  "homepage": "https://github.com/gvitola/bookstore-landing#readme",
+  "homepage": "https://github.com/gvitola/todolist-landing#readme",
   "dependencies": {
-    "bookstore-landing": "file:"
+    "todolist-landing": "file:"
   }
 }
