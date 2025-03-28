@@ -1,17 +1,17 @@
 const url = 'https://localhost:7185/api/todoitems';
 
-const options = {
-	method: 'GET',
-	headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-  }
-}
-
 let todos = [];
 
 async function getItems() {
-    await fetch(url, options)
+  const options = {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    }
+  };
+  
+  await fetch(url, options)
       .then(response => response.json())
       .then(data => _displayItems(data))
       .catch(error => console.error('Unable to get items.', error))
@@ -25,14 +25,16 @@ function addItem() {
     name: addNameTextbox.value.trim()
   };
 
-  fetch(url, {
+  const options = {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(item)
-  })
+  };
+
+  fetch(url, options)
     .then(response => response.json())
     .then(() => {
       getItems();
@@ -42,11 +44,13 @@ function addItem() {
 }
 
 function deleteItem(id) {
-  fetch(`${url}/${id}`, {
-    method: 'DELETE'
-  })
-  .then(() => getItems())
-  .catch(error => console.error('Unable to delete item.', error));
+  const options = {
+      method: 'DELETE'
+  }
+
+  fetch(`${url}/${id}`, options)
+    .then(() => getItems())
+    .catch(error => console.error('Unable to delete item.', error));
 }
 
 function updateItem() {
@@ -57,18 +61,20 @@ function updateItem() {
     name: document.getElementById('edit-name').value.trim()
   };
 
-  fetch(`${url}/${itemId}`, {
+  const options = {
     method: 'PUT',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(item)
-  })
-  .then(() => getItems())
-  .catch(error => console.error('Unable to update item.', error));
+  };
 
-  closeInput();
+  fetch(`${url}/${itemId}`, options)
+    .then(() => getItems())
+    .catch(error => console.error('Unable to update item.', error));
+
+  closeEditForm();
 
   return false;
 }
@@ -82,7 +88,7 @@ function displayEditForm(id) {
   document.getElementById('editForm').style.display = 'block';
 }
 
-function closeInput() {
+function closeEditForm() {
   document.getElementById('editForm').style.display = 'none';
 }
 
@@ -97,6 +103,14 @@ function _displayItems(data) {
   tBody.innerHTML = '';
 
   _displayCount(data.length);
+
+  if (data.length === 0) {
+    document.getElementById('listTable').style.display = 'none';
+    document.getElementById('counter').style.display = 'none';
+  } else {
+    document.getElementById('listTable').style.display = 'table';
+    document.getElementById('counter').style.display = 'block';
+  }
 
   const button = document.createElement('button');
 
