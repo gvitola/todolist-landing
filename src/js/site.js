@@ -1,4 +1,5 @@
-const url = 'https://localhost:7185/api/todoitems';
+const url = 'http://localhost:8080/api/todoitems';
+
 
 let todos = [];
 
