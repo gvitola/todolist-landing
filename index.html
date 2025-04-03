@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Basic -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Site Metas -->
+    <meta name="keywords" content="HTML, CSS, API, JS">
+    <meta name="description" content="Interfase de consumo de la API Todo list.">
+    <meta name="Guillermo Vitola" content="">
+  
+    <title>ToDos</title>
+  
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css">
+  
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,600,700&amp;display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/site.css" /> -->
+</head>
+<body class="sub_page">  
+    <body>
+        <div class="hero_area">
+            <!-- header section strats -->
+            <header class="header_section">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container">
+                <a class="navbar-brand" href="index.html">
+                    <span>
+                    Daily To-Do List
+                    </span>
+                </a>
+    
+                <div class="navbar-collapse" id="">
+                    <div class="d-none d-lg-flex ml-auto flex-column flex-lg-row align-items-center">
+                    <ul class="navbar-nav  ">
+                        <li class="nav-item">
+                        <a class="nav-link" href="fruit.html">
+                            <img src="images/login.png" alt="" />
+                            <span>Login</span></a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="service.html">
+                            <img src="images/signup.png" alt="" />
+                            <span>Sign Up</span>
+                        </a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 mb-3 mb-lg-0  mr-5">
+                        <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                    </form>
+                    </div>
+    
+                    <div class="custom_menu-btn">
+                    <button onclick="openNav()">
+                        <span class="s-1">
+    
+                        </span>
+                        <span class="s-2">
+    
+                        </span>
+                        <span class="s-3">
+    
+                        </span>
+                    </button>
+                    </div>
+                    <div id="myNav" class="overlay">
+                    <div class="overlay-content">
+                        <a href="index.html">HOME</a>
+                        <a href="http://www.puerto54.com">TEAM</a>
+                        <a href="http://www.puerto54.com">PORTFOLIO</a>
+                        <a href="http://www.puerto54.com">CONTACT US</a>
+                    </div>
+                    </div>
+                </div>
+                </nav>
+            </div>
+            </header>
+            <!-- end header section -->
+        </div>
+
+        <section class="contact_section layout_padding">
+            <div class="container">
+      
+                <h1>My daily To-Do list</h1>
+                <h3>Add</h3>
+                <form class="form-inline my-2 mb-3 mb-lg-0 mr-5" action="javascript:void(0);" method="POST" onsubmit="addItem()">
+                    <input type="text" id="add-name" placeholder="New to-do">
+                    <button class="my-2 my-sm-0" type="submit" value="Add">Add</button>
+                </form>
+
+                <div id="editForm">
+                    <h3 class="my-2">Edit</h3>
+                    <form class="form-inline my-2 mb-3 mb-lg-0 mr-5" action="javascript:void(0);" onsubmit="updateItem()">
+                        <input type="hidden" id="edit-id">
+                        <label class="my-2 my-sm-0 nav-item" for="edit-isComplete">Is Complete?</label>
+                        <input class="nav-link" type="checkbox" id="edit-isComplete">
+                        <input type="text" id="edit-name" title="Edit to-do name" placeholder="Edit to-do name">
+                        <button class="my-2 my-sm-0" type="submit" value="Save">Save</button>
+                        <a class="nav-link" onclick="closeEditForm()" aria-label="Close">&#10006;</a>
+                    </form>
+                </div>
+
+                <p id="counter"></p>
+
+                <table id="listTable">
+                    <tr>
+                        <th>Is Complete?</th>
+                        <th>Name</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tbody id="todos"></tbody>
+                </table>
+            </div>
+        </section>
+         <!-- info section -->
+        <section class="info_section layout_padding">
+            <div class="container info_content">
+            <div>
+                <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                    <div class="col-md-6">
+                        <h5>
+                        About Us
+                        </h5>
+                        <ul>
+                            <li>
+                                Guillermo is passionate about 
+                            </li>
+                            <li>
+                                technology and he made this   
+                            </li>
+                            <li>
+                                node.js program as a guide of  
+                            </li>
+                            <li>
+                                how to consume API services
+                            </li>
+                            <li>
+                                from an external server.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>
+                        Portfolio
+                        </h5>
+                        <ul>
+                        <li>
+                            at: 
+                            <a href="http://www.puerto54.com">
+                            www.puerto54.com
+                            </a>
+                        </li>
+    
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="form_container mt-5">
+                    <form action="">
+                        <input type="email" placeholder="Enter Your email" />
+                        <button type="submit">
+                        Subscribe
+                        </button>
+                    </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info_img-box">
+                    <img src="images/map.png" alt="">
+                    </div>
+                    <div class="d-flex justify-content-end pr-5">
+                        <div class="social-box">
+                            <a href="" title="Visit facebook page">
+                            <img src="images/fb.png" alt="" />
+                            </a>
+        
+                            <a href="" title="Visit twitter page">
+                            <img src="images/twitter.png" alt="" />
+                            </a>
+                            <a href="" title="Visit linkedin page">
+                            <img src="images/linkedin1.png" alt="" />
+                            </a>
+                            <a href="" title="Visit instagrame page">
+                            <img src="images/instagram1.png" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- end info section -->
+        <hr class="footer_hr">
+        <!-- footer section -->
+        <section class="container-fluid footer_section">
+        <p>
+            &copy;
+            2025 All Rights Reserved. 
+        </p>
+        </section>
+        <!-- footer section -->
+        
+        <script src= "js/site.js" asp-append-version="true"></script>
+        <script type="text/javascript">
+            getItems();
+        </script>  
+    
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+
+        <script>
+        function openNav() {
+            document.getElementById("myNav").classList.toggle("menu_width")
+            document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style")
+        }
+        </script>
+    
+    </body>
+</body>
+</html>
