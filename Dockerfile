@@ -1,8 +1,4 @@
-# Use the official nginx image as the base
-FROM nginx:latest
-
-# Copy the static files from your web project to the nginx html folder
-COPY . /usr/share/nginx/html
-
-# Expose port 80 for the web server
+FROM nginx:alpine
+COPY ./src /usr/share/nginx/html
 EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
