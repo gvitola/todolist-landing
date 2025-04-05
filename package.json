@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/gvitola/todolist-landing#readme",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "todolist-landing": "file:"
   },
   "devDependencies": {

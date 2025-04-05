@@ -708,6 +708,20 @@ a:focus {
 
 /* To-do list section */
 
+@font-face {
+  font-family: 'Dosis';
+  src: url('../fonts/Dosis-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 input[type='submit'], button, [aria-label] {
   cursor: pointer;
   margin-left: 1px;

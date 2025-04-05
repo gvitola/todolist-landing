@@ -21,11 +21,11 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   
     <!-- fonts style -->
-    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,600,700&amp;display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,600,700&amp;display=swap" rel="stylesheet"> -->
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
     <!-- responsive style -->
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/responsive.css" type="text/css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="css/site.css" /> -->
 </head>
 <body class="sub_page">  
@@ -57,12 +57,12 @@
                         </li>
                     </ul>
                     <form class="form-inline my-2 mb-3 mb-lg-0  mr-5">
-                        <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                        <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit" title="Search"></button>
                     </form>
                     </div>
     
                     <div class="custom_menu-btn">
-                    <button onclick="openNav()">
+                    <button onclick="openNav()" title="Open navigation menu">
                         <span class="s-1">
     
                         </span>
@@ -214,11 +214,11 @@
         </p>
         </section>
         <!-- footer section -->
-        
-        <script src= "js/site.js" asp-append-version="true"></script>
+    
+        <script src= "js/site.js" asp-append-version="true"></script>        
         <script type="text/javascript">
             getItems();
-        </script>  
+        </script>
     
         <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
