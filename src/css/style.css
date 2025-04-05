@@ -731,6 +731,12 @@ input[type='submit'], button, [aria-label] {
   display: none;
 }
 
+button:disabled {
+  pointer-events: none;
+  background-color: #787971;
+  opacity: 0.5; /* Optional: visually indicate the button is disabled */
+}
+
 table {
   font-family: Arial, sans-serif;
   border: 1px solid #588d17;

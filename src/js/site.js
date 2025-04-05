@@ -107,9 +107,15 @@ function _displayItems(data) {
   if (data.length === 0) {
     document.getElementById('listTable').style.display = 'none';
     document.getElementById('counter').style.display = 'none';
+    document.getElementById('addButton').disabled = false;
   } else {
     document.getElementById('listTable').style.display = 'table';
     document.getElementById('counter').style.display = 'block';
+    if (data.length >= 24) {
+      document.getElementById('addButton').disabled = true;
+    } else {
+      document.getElementById('addButton').disabled = false;
+    }
   }
 
   const button = document.createElement('button');
