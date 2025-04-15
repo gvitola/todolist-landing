@@ -95,11 +95,11 @@ body {
 }
 
 .custom_menu-btn button {
-  margin-top: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   outline: none;
   border: none;
   background-color: transparent;
-
 }
 
 .custom_menu-btn button span {
@@ -531,7 +531,6 @@ a:focus {
   margin-bottom: 0;
 }
 
-
 .contact_section label {
   display: flex;
   flex-direction: column;
@@ -543,15 +542,18 @@ a:focus {
 .contact_section textarea {
   outline: none;
   border: 1px solid #c1c1c2;
-  width: auto; /*90%;*/
+  width: 100%; /*90%;*/
   height: 30px; /*45px;*/
   padding: 0 5px;
   margin: 5px;
 }
 
-.contact_section textarea {
-  height: 175px;
-  padding: 5px;
+.contact_section input[type="checkbox"] {
+  height: 15px;
+  width: 15px;
+  margin: 2px;
+  padding: 0 5px;
+  justify-self: center;
 }
 
 .contact_form-container {
@@ -650,11 +652,12 @@ a:focus {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-left: 5px;
 }
 
 
 .info_section .form_container input {
-  width: 95%;
+  width: auto; /*95%;*/
   height: 45px;
   border-radius: 0;
   border: none;
@@ -731,6 +734,21 @@ input[type='submit'], button, [aria-label] {
   display: none;
 }
 
+#counter {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #606a08;
+}
+
+#addForm, #editForm {
+  margin: 0 auto;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #606a08;
+}
+
 button:disabled {
   pointer-events: none;
   background-color: #787971;
@@ -767,14 +785,18 @@ table td:nth-child(2){
 }
 
 table th:nth-child(3){
-  width: 5%;
+  width: 1%;
 }
 table th:nth-child(4){
-  width: 5%;
+  width: 1%;
+}
+table th:nth-child(5){
+  width: 1%;
 }
 
 form input, form label {
   margin-left: 5px;
+  margin-right: 5px;
 }
 
 th {
@@ -783,7 +805,27 @@ th {
 }
 
 td {
-  border: 1px solid #5f8b69;
+  border-top: 1px solid #5f8b69;
+  border-bottom: 1px solid #5f8b69;
   padding: 1px 5px;
 }
+
+i {
+  color: #c7cbaf;
+  font-size: 1rem;
+}
+
+i:hover {
+  color: #5f8b69;
+  cursor: pointer;
+}
+
+#listTable.drop-zone {
+  border: 2.5px dashed #767971;
+}
+.dragging {
+  opacity: 0.3;
+  background-color: #cef06e;
+}
+
 /* end To-do list section */

@@ -22,7 +22,8 @@
     <link href="css/style.css" type="text/css" rel="stylesheet">
     <!-- responsive style -->
     <link href="css/responsive.css" type="text/css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="css/site.css" /> -->
+    <!-- -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body class="sub_page">  
     <body>
@@ -31,31 +32,30 @@
             <header class="header_section">
             <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg custom_nav-container">
-                <a class="navbar-brand" href="index.html">
-                    <span>
-                    Daily To-Do List
-                    </span>
-                </a>
-    
-                <div class="navbar-collapse" id="">    
-                    <div class="custom_menu-btn">
-                    <button onclick="openNav()" title="Open navigation menu">
-                        <span class="s-1">    
+                    <a class="navbar-brand" href="index.html">
+                        <span>
+                        Daily To-Do List
                         </span>
-                        <span class="s-2">    
-                        </span>
-                        <span class="s-3">    
-                        </span>
-                    </button>
+                    </a>    
+                    <div class="navbar-collapse" id="">    
+                        <div class="custom_menu-btn">
+                            <button onclick="openNav()" title="Open navigation menu" type="button">
+                                <span class="s-1">    
+                                </span>
+                                <span class="s-2">    
+                                </span>
+                                <span class="s-3">    
+                                </span>
+                            </button>
+                        </div>
+                        <div id="myNav" class="overlay">
+                            <div class="overlay-content">
+                                <a href="http://www.puerto54.com">HOME</a>
+                                <a href="http://www.puerto54.com/pages/about.html">TEAM</a>
+                                <a href="http://www.puerto54.com/pages/privacy.html">PORTFOLIO</a>
+                            </div>
+                        </div>
                     </div>
-                    <div id="myNav" class="overlay">
-                    <div class="overlay-content">
-                        <a href="http://www.puerto54.com">HOME</a>
-                        <a href="http://www.puerto54.com/pages/about.html">TEAM</a>
-                        <a href="http://www.puerto54.com/pages/privacy.html">PORTFOLIO</a>
-                    </div>
-                    </div>
-                </div>
                 </nav>
             </div>
             </header>
@@ -63,33 +63,55 @@
         </div>
 
         <section class="contact_section layout_padding">
-            <div class="container">
-      
-                <h1>My daily To-Do list</h1>
-                <h3>Add</h3>
-                <form class="form-inline my-2 mb-3 mb-lg-0 mr-5" action="javascript:void(0);" method="POST" onsubmit="addItem()">
-                    <input type="text" id="add-name" placeholder="New to-do">
-                    <button id="addButton" class="my-2 my-sm-0" type="submit" value="Add">Add</button>
-                </form>
+            <div class="container">      
+                <h3>My daily To-Do list</h3>
 
+                <div id="addForm">
+                    <h5 class="my-2">Add</h5>
+                    <form class="row g-3 mb-4" action="javascript:void(0);" method="POST" onsubmit="addItem()">
+                        <div class="col-md-10">
+                            <div class="row">            
+                                <input type="text" id="add-name" placeholder="New to-do">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="row">            
+                                <button id="addButton" class="my-2 my-sm-0" type="submit" value="Add">Add</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
                 <div id="editForm">
-                    <h3 class="my-2">Edit</h3>
-                    <form class="form-inline my-2 mb-3 mb-lg-0 mr-5" action="javascript:void(0);" onsubmit="updateItem()">
-                        <input type="hidden" id="edit-id">
-                        <label class="my-2 my-sm-0 nav-item" for="edit-isComplete">Is Complete?</label>
-                        <input class="nav-link" type="checkbox" id="edit-isComplete">
-                        <input type="text" id="edit-name" title="Edit to-do name" placeholder="Edit to-do name">
-                        <button class="my-2 my-sm-0" type="submit" value="Save">Save</button>
-                        <a class="nav-link" onclick="closeEditForm()" aria-label="Close">&#10006;</a>
+                    <h5 class="my-2">Edit</h5>
+                    <form  class="row g-3 mb-4" action="javascript:void(0);" onsubmit="updateItem()"> 
+                        <input type="hidden" id="edit-id">                        
+                        <div class="col-md-2">
+                            <div class="row">            
+                                <label class="my-2 my-sm-0 nav-item" for="edit-isComplete">Is Complete?</label>
+                                <input type="checkbox" id="edit-isComplete"> 
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row">           
+                                <input type="text" id="edit-name" title="Edit to-do name" placeholder="Edit to-do name">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="row">                        
+                                <button class="my-2 my-sm-0" type="submit" value="Save">Save</button>
+                                <a class="nav-link" onclick="closeEditForm()" aria-label="Close">&#10006;</a>
+                            </div>
+                        </div>
                     </form>
                 </div>
 
-                <p id="counter"></p>
+                <h6 id="counter"></h6>
 
                 <table id="listTable">
                     <tr>
                         <th>Is Complete?</th>
-                        <th>Name</th>
+                        <th>Description</th>
+                        <th></th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -112,7 +134,9 @@
                             <li>
                                 This node.js program is a 
                                 simple way of consuming 
-                                a REST API service.  
+                                a REST API service.
+                                Also is a good example of
+                                how to manage a list of items.  
                             </li>
                         </ul>
                     </div>
@@ -121,13 +145,12 @@
                         Portfolio
                         </h5>
                         <ul>
-                        <li>
-                            at: 
-                            <a href="http://www.puerto54.com">
-                            www.puerto54.com
-                            </a>
-                        </li>
-    
+                            <li>
+                                at: 
+                                <a href="http://www.puerto54.com">
+                                www.puerto54.com
+                                </a>
+                            </li>    
                         </ul>
                     </div>
                     </div>
@@ -161,7 +184,6 @@
                         </div>
                     </div>
                 </div>
-    
                 </div>
             </div>
             </div>
